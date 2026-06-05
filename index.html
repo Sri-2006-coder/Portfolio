@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Personal Portfolio</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f7fb;
+    color:#333;
+}
+
+/* Navbar */
+
+.navbar{
+    box-shadow:0 3px 15px rgba(0,0,0,0.1);
+}
+
+.navbar-brand{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+/* Hero Section */
+
+.hero{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+}
+
+.profile-img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:8px solid white;
+    box-shadow:0 0 25px rgba(255,255,255,0.4);
+}
+.hero .col-md-8{
+    padding-left:40px;
+}
+.hero h1{
+    font-size:3rem;
+    font-weight:700;
+}
+
+.hero h4{
+    margin:15px 0;
+    opacity:0.9;
+}
+
+.hero p{
+    font-size:1.1rem;
+    max-width:600px;
+}
+
+/* Section Titles */
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2.3rem;
+    font-weight:700;
+    color:#2c3e50;
+}
+
+/* Cards */
+
+.card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:all 0.3s ease;
+    height:100%;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card h4,
+.card h5{
+    color:#667eea;
+    font-weight:600;
+}
+
+/* About Cards */
+
+#about .card{
+    padding:25px;
+    min-height:240px;
+}
+
+/* Skills */
+
+.skill-card{
+    padding:25px;
+    text-align:center;
+    border-radius:20px;
+    background:white;
+    font-weight:600;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.skill-card h5{
+    margin:0;
+}
+
+.progress{
+    height:22px;
+    border-radius:20px;
+    overflow:hidden;
+    background:#e9ecef;
+}
+
+.progress-bar{
+    font-weight:600;
+}
+
+/* Projects */
+
+#projects .card{
+    padding:20px;
+}
+
+#projects .btn{
+    width:100%;
+    margin-top:10px;
+}
+
+/* Achievements */
+
+#achievements .card{
+    padding:25px;
+    text-align:center;
+}
+
+/* Contact Form */
+
+form.card{
+    border-radius:20px;
+}
+
+.form-control{
+    border-radius:12px;
+    padding:12px;
+    border:1px solid #ddd;
+}
+
+.form-control:focus{
+    box-shadow:0 0 10px rgba(102,126,234,.2);
+    border-color:#667eea;
+}
+
+.btn{
+    border-radius:12px;
+    padding:10px 20px;
+}
+
+/* Modal */
+
+.modal-content{
+    border-radius:20px;
+    border:none;
+}
+
+/* Footer */
+
+footer{
+    background:#212529;
+    color:white;
+    padding:25px;
+    text-align:center;
+    margin-top:50px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero{
+    text-align:center;
+    padding:80px 0;
+}
+
+.hero h1{
+    font-size:2.3rem;
+}
+
+.profile-img{
+    width:200px;
+    height:200px;
+    margin-bottom:25px;
+}
+
+.section-title{
+    font-size:2rem;
+}
+
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<div class="container">
+
+<a class="navbar-brand" href="#">Portfolio</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+<!-- Home -->
+
+<section id="home" class="hero">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-md-4 text-center">
+<img src="prop.jpg" class="profile-img">
+</div>
+
+<div class="col-md-8">
+
+<h1>Harshi Sharma</h1>
+
+<h4>Computer Science Student</h4>
+
+<p>
+Passionate web developer interested in Full Stack Development,
+Data Analytics and creating user-friendly applications.
+</p>
+
+<button class="btn btn-light btn-lg"
+data-bs-toggle="modal"
+data-bs-target="#resumeModal">
+Download Resume
+</button>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- About -->
+
+<section id="about" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card p-3">
+<h4>Education</h4>
+<p>B.Tech - Computer Science Engineering</p>
+<p>XYZ College</p>
+<p>2023 - 2027</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-3">
+<h4>Career Objective</h4>
+<p>
+To secure a challenging position where I can apply
+my technical skills and continuously learn.
+</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-3">
+<h4>Interests</h4>
+<ul>
+<li>Web Development</li>
+<li>Data Analytics</li>
+<li>UI Design</li>
+<li>Problem Solving</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Skills -->
+
+<section id="skills" class="py-5 bg-light">
+
+<div class="container">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="row mb-4">
+
+<div class="col-lg-6 col-md-6">
+<div class="skill-card">
+<h5>HTML</h5>
+</div>
+</div>
+
+<div class="col-lg-6 col-md-6">
+<div class="skill-card">
+<h5>CSS</h5>
+</div>
+</div>
+
+<div class="col-lg-6 col-md-6">
+<div class="skill-card">
+<h5>Bootstrap</h5>
+</div>
+</div>
+
+<div class="col-lg-6 col-md-6">
+<div class="skill-card">
+<h5>JavaScript</h5>
+</div>
+</div>
+
+</div>
+
+<h5>HTML - 90%</h5>
+<div class="progress mb-3">
+<div class="progress-bar bg-success" style="width:90%">90%</div>
+</div>
+
+<h5>CSS - 85%</h5>
+<div class="progress mb-3">
+<div class="progress-bar bg-info" style="width:85%">85%</div>
+</div>
+
+<h5>Bootstrap - 80%</h5>
+<div class="progress mb-3">
+<div class="progress-bar bg-warning" style="width:80%">80%</div>
+</div>
+
+<h5>JavaScript - 75%</h5>
+<div class="progress mb-3">
+<div class="progress-bar bg-danger" style="width:75%">75%</div>
+</div>
+
+</div>
+</section>
+
+<!-- Projects -->
+
+<section id="projects" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="card p-3 h-100">
+<h5>Event Management System</h5>
+<p>College event registration platform.</p>
+<p><b>Tech:</b> HTML, CSS, Bootstrap</p>
+<a href="#" class="btn btn-primary">GitHub</a>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3 h-100">
+<h5>Play Connect</h5>
+<p>Sports community platform.</p>
+<p><b>Tech:</b> React, CSS</p>
+<a href="#" class="btn btn-primary">GitHub</a>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3 h-100">
+<h5>Portfolio Website</h5>
+<p>Personal portfolio project.</p>
+<p><b>Tech:</b> Bootstrap</p>
+<a href="#" class="btn btn-primary">GitHub</a>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3 h-100">
+<h5>Student Result System</h5>
+<p>Result management application.</p>
+<p><b>Tech:</b> Java, MySQL</p>
+<a href="#" class="btn btn-primary">GitHub</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Achievements -->
+
+<section id="achievements" class="py-5 bg-light">
+
+<div class="container">
+
+<h2 class="section-title">Achievements</h2>
+
+<div class="row">
+
+<div class="col-lg-6 col-md-6 mb-4">
+<div class="card p-3">
+<h5>Certifications</h5>
+<p>HTML, CSS, Java</p>
+</div>
+</div>
+
+<div class="col-lg-6 col-md-6 mb-4">
+<div class="card p-3">
+<h5>Workshops</h5>
+<p>Full Stack Development</p>
+</div>
+</div>
+<div class="col-lg-6 col-md-6 mb-4">
+<div class="card p-3">
+<h5>Internships</h5>
+<p>Web Development Internship</p>
+</div>
+</div>
+<div class="col-lg-6 col-md-6 mb-4">
+<div class="card p-3">
+<h5>Awards</h5>
+<p>Coding Competition Participant</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+
+<section id="contact" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+
+<form class="card p-4">
+
+<input type="text"
+class="form-control mb-3"
+placeholder="Name">
+
+<input type="email"
+class="form-control mb-3"
+placeholder="Email">
+
+<input type="text"
+class="form-control mb-3"
+placeholder="Subject">
+
+<textarea
+class="form-control mb-3"
+rows="5"
+placeholder="Message"></textarea>
+
+<button class="btn btn-success">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Resume Modal -->
+
+<div class="modal fade" id="resumeModal">
+
+<div class="modal-dialog">
+
+<div class="modal-content">
+
+<div class="modal-header">
+<h5>Resume Download</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+Click below to download your resume.
+</div>
+
+<div class="modal-footer">
+<a href="#" class="btn btn-primary">
+Download Resume
+</a>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+
+<footer>
+© 2026 Personal Portfolio Website
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
